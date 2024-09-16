@@ -1,4 +1,19 @@
+import { useContext, useState } from "react";
+import { AuthContext } from "../context/AuthProvider";
+
 const ManagePanel = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { login } = useContext(AuthContext);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (email.toLowerCase() === "okanbhdr@gmail.com" && password === "332461") {
+      login({ email, password });
+    } else {
+      alert("Kullanıcı bilgilerini yanlış girdiniz lütfen tekrar deneyiniz.");
+    }
+  };
+
   return (
     <div className="w-[300px] m-auto my-5 p-5 rounded-[20px] ">
       <div className="flex gap-2">
