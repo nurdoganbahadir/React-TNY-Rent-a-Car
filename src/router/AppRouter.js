@@ -1,10 +1,10 @@
-import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";
 import Home from "../pages/Home";
 import Error from "../components/Error/Error";
 import ManagePanel from "../pages/ManagePanel";
 import UserPanel from "../pages/UserPanel";
-import PrivateRouter from "../context/PrivateRouter";
+import PrivateRouter from "./PrivateRouter";
 
 const AppRouter = () => {
   return (
