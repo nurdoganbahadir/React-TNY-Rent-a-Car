@@ -1,14 +1,18 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 const ManagePanel = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { login } = useContext(AuthContext);
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (email.toLowerCase() === "okanbhdr@gmail.com" && password === "332461") {
       login({ email, password });
+      navigate("/userpanel");
     } else {
       alert("Kullanıcı bilgilerini yanlış girdiniz lütfen tekrar deneyiniz.");
     }
@@ -23,7 +27,10 @@ const ManagePanel = () => {
         </h1>
       </div>
 
-      <form className="flex flex-col text-left p-3 gap-5">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col text-left p-3 gap-5"
+      >
         <div className="flex flex-col gap-1">
           <label htmlFor="email" className="font-serif text-xl dark:text-white">
             Email
@@ -33,6 +40,7 @@ const ManagePanel = () => {
             placeholder="Enter Email"
             className="rounded-[10px]"
             required
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div className="flex flex-col gap-1">
@@ -48,6 +56,7 @@ const ManagePanel = () => {
             placeholder="Password"
             className="rounded-[10px]"
             required
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
         <button className="bg-light-red h-[44px] font-serif text-label uppercase hover:opacity-90 rounded-[4px] text-white">
