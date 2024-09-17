@@ -14,6 +14,7 @@ export const useProductsContext = () => {
 const ProductProvider = ({ children }) => {
   const [data, setData] = useState([]);
 
+  //!datayı burada çekiyoruz
   const getData = async () => {
     try {
       const { data } = await axios.get(
@@ -24,12 +25,26 @@ const ProductProvider = ({ children }) => {
       console.log(error);
     }
   };
-  console.log(data);
+
+  //! post işlemi
+  const postData = async (postinfo) => {
+    try {
+      await axios.post(
+        "https://66e42f40d2405277ed136991.mockapi.io/tny",
+        postinfo
+      );
+      getData();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     getData();
   }, []);
+  console.log(data);
 
-  const values = { data, setData };
+  const values = { data, setData, postData };
 
   return (
     <ProductContext.Provider value={values}>{children}</ProductContext.Provider>
