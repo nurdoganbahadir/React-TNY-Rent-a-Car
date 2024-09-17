@@ -39,6 +39,12 @@ const ProductProvider = ({ children }) => {
     }
   };
 
+  //! delete işlemi
+  const deleteData = async (id) => {
+    await axios.delete(`https://66e42f40d2405277ed136991.mockapi.io/tny/${id}`);
+    getData();
+  };
+
   useEffect(() => {
     getData();
   }, []);

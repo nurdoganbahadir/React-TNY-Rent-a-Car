@@ -12,7 +12,6 @@ const AddItem = () => {
     info: "",
     price: "",
   });
-  console.log(formData);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,7 +26,7 @@ const AddItem = () => {
     postData(formData);
   };
 
-  const { data, setData, postData } = useProductsContext();
+  const { postData } = useProductsContext();
 
   return (
     <>
