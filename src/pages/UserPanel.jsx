@@ -5,6 +5,10 @@ import { useProductsContext } from "../context/ProductProvider";
 const UserPanel = () => {
   const navigate = useNavigate();
 
+  const handleDelete = (id) => {
+    deleteData(id);
+  };
+
   const { data, deleteData } = useProductsContext();
 
   return (
@@ -58,7 +62,10 @@ const UserPanel = () => {
               </div>
             </div>
             <div className="flex md:gap-4">
-              <button className="text-gray-700 text-sm rounded-lg px-3 py-2 duration-150 bg-white hover:bg-gray-100 dark:bg-gray-300 dark:hover:bg-gray-100 float-end">
+              <button
+                onClick={() => handleDelete(item.id)}
+                className="text-gray-700 text-sm rounded-lg px-3 py-2 duration-150 bg-white hover:bg-gray-100 dark:bg-gray-300 dark:hover:bg-gray-100 float-end"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"

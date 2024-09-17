@@ -50,7 +50,7 @@ const ProductProvider = ({ children }) => {
   }, []);
   console.log(data);
 
-  const values = { data, setData, postData };
+  const values = { data, setData, postData, deleteData };
 
   return (
     <ProductContext.Provider value={values}>{children}</ProductContext.Provider>
