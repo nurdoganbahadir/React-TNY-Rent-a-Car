@@ -8,7 +8,7 @@ import PrivateRouter from "./PrivateRouter";
 
 const AppRouter = () => {
   return (
-    <BrowserRouter>
+    <>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -18,7 +18,7 @@ const AppRouter = () => {
           <Route path="/userpanel" element={<UserPanel />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </>
   );
 };
 

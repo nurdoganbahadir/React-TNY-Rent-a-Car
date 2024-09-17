@@ -1,10 +1,15 @@
+import React from "react";
+import { useContext } from "react";
+import { createContext } from "react";
 
-import React from 'react'
+const ProductContext = createContext();
 
-const ProductProvider = () => {
-  return (
-    <div>ProductProvider</div>
-  )
-}
+export const useProductsContext = () => {
+  return useContext(ProductContext);
+};
 
-export default ProductProvider
+const ProductProvider = ({ children }) => {
+  return <ProductContext.Provider>{children}</ProductContext.Provider>;
+};
+
+export default ProductProvider;
