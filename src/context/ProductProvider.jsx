@@ -13,6 +13,7 @@ export const useProductsContext = () => {
 
 const ProductProvider = ({ children }) => {
   const [data, setData] = useState([]);
+  const [edit, setEdit] = useState("");
 
   //!datayı burada çekiyoruz
   const getData = async () => {
@@ -45,12 +46,30 @@ const ProductProvider = ({ children }) => {
     getData();
   };
 
+  //!put-edit işlemi
+  const putData = async (edit) => {
+    await axios.put(
+      `https://66e42f40d2405277ed136991.mockapi.io/tny/${edit.id}`,
+      edit
+    );
+    getData();
+  };
+
   useEffect(() => {
     getData();
   }, []);
   console.log(data);
 
-  const values = { data, setData, postData, deleteData };
+  const values = {
+    data,
+    setData,
+    postData,
+    deleteData,
+    putData,
+    setEdit,
+    edit,
+  };
+  console.log(edit);
 
   return (
     <ProductContext.Provider value={values}>{children}</ProductContext.Provider>
