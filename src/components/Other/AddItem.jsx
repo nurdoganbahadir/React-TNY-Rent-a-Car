@@ -1,4 +1,9 @@
 const AddItem = () => {
+
+
+
+
+    
   return (
     <>
       <form className=" md:w-[50%] mx-auto my-5 p-4">
@@ -92,7 +97,7 @@ const AddItem = () => {
             required
           />
         </div>
-        <button className="bg-primary-color text-white mt-5 py-2 px-4 rounded-full hover:bg-secondary-color hover:outline hover:outline-light-red float-end">
+        <button className="bg-primary-color text-white my-5 py-2 px-4 rounded-full hover:bg-secondary-color hover:outline hover:outline-light-red float-end">
           Gönder
         </button>
       </form>

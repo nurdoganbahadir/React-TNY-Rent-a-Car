@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useProductsContext } from "../context/ProductProvider";
 
 const members = [
   {
@@ -27,9 +28,10 @@ const members = [
 ];
 
 const UserPanel = () => {
+  const navigate = useNavigate();
 
-const navigate = useNavigate()
-  
+  const { data } = useProductsContext();
+
   return (
     <div className="max-w-2xl mx-auto my-5 px-4">
       <div className="items-start justify-between sm:flex">
@@ -42,7 +44,7 @@ const navigate = useNavigate()
           </p>
         </div>
         <a
-        onClick={()=>navigate("/userpanel/additem")}
+          onClick={() => navigate("/userpanel/additem")}
           href="javascript:void(0)"
           className="inline-flex items-center justify-center gap-1 py-2 px-3 mt-2 font-medium text-sm text-center text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 rounded-lg sm:mt-0"
         >
