@@ -1,14 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import { useProductsContext } from "../../context/ProductProvider";
+import { useNavigate } from "react-router-dom";
 
 const EditItem = () => {
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    putData(edit);
+    navigate("/userpanel");
+  };
+
   const { putData, setEdit, edit } = useProductsContext();
   console.log(edit);
   return (
     <>
-      <form className=" md:w-[50%] mx-auto my-5 p-4">
+      <form onSubmit={handleSubmit} className=" md:w-[50%] mx-auto my-5 p-4">
         <h1 className="text-center text-2xl underline dark:text-white">
-          Araç Ekleme Formu
+          Araç Bilgileri Değiştirme Formu
         </h1>
         <div className="flex flex-col mt-5">
           <label htmlFor="brand" className="dark:text-white">
@@ -68,8 +77,8 @@ const EditItem = () => {
             onChange={(e) => setEdit({ ...edit, insurance: e.target.value })}
           >
             <option value="">Seçiniz</option>
-            <option value="Otomatik">Var</option>
-            <option value="Manuel">Yok</option>
+            <option value="Var">Var</option>
+            <option value="Yok">Yok</option>
           </select>
         </div>
         <div className="flex flex-col mt-4">
@@ -130,7 +139,7 @@ const EditItem = () => {
           />
         </div>
         <button
-          onClick={() => putData(edit)}
+          type="submit"
           className="bg-primary-color text-white my-5 py-2 px-4 rounded-full hover:bg-secondary-color hover:outline hover:outline-light-red float-end"
         >
           Gönder

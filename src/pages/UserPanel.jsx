@@ -7,10 +7,10 @@ const UserPanel = () => {
 
   const handleDelete = (id) => {
     deleteData(id);
+    console.log(id);
   };
-
+  
   const { data, deleteData, setEdit } = useProductsContext();
-
   return (
     <div className="max-w-2xl mx-auto my-5 px-4">
       <div className="items-start justify-between sm:flex">
@@ -49,10 +49,7 @@ const UserPanel = () => {
           ({ id, brand, model, year, gear, img, insurance, info, price }) => (
             <li key={id} className="py-5 flex items-start justify-between">
               <div className="flex gap-3">
-                <img
-                  src={img}
-                  className="flex-none w-12 h-12 rounded-full"
-                />
+                <img src={img} className="flex-none w-12 h-12 rounded-full" />
                 <div>
                   <span className="block text-sm text-gray-700 font-semibold dark:text-white">
                     {brand}
@@ -64,7 +61,7 @@ const UserPanel = () => {
               </div>
               <div className="flex md:gap-4">
                 <button
-                  onClick={({ id }) => handleDelete(id)}
+                  onClick={() => handleDelete(id)}
                   className="text-gray-700 text-sm rounded-lg px-3 py-2 duration-150 bg-white hover:bg-gray-100 dark:bg-gray-300 dark:hover:bg-gray-100 float-end"
                 >
                   <svg

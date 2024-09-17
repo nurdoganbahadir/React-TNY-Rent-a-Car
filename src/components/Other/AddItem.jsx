@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { useProductsContext } from "../../context/ProductProvider";
+import { useNavigate } from "react-router-dom";
 
 const AddItem = () => {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     brand: "",
     model: "",
@@ -24,6 +27,7 @@ const AddItem = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     postData(formData);
+    navigate("/userpanel");
   };
 
   const { postData } = useProductsContext();
@@ -88,8 +92,8 @@ const AddItem = () => {
             onChange={handleChange}
           >
             <option value="">Seçiniz</option>
-            <option value="Otomatik">Var</option>
-            <option value="Manuel">Yok</option>
+            <option value="Var">Var</option>
+            <option value="Yok">Yok</option>
           </select>
         </div>
         <div className="flex flex-col mt-4">

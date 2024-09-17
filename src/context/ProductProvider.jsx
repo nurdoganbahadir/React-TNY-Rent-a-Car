@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { createContext } from "react";
 import axios from "axios";
 import { useEffect } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const ProductContext = createContext();
 
@@ -12,6 +13,7 @@ export const useProductsContext = () => {
 };
 
 const ProductProvider = ({ children }) => {
+  const navigate = useNavigate();
   const [data, setData] = useState([]);
   const [edit, setEdit] = useState("");
 
@@ -69,7 +71,6 @@ const ProductProvider = ({ children }) => {
     setEdit,
     edit,
   };
-  console.log(edit);
 
   return (
     <ProductContext.Provider value={values}>{children}</ProductContext.Provider>
