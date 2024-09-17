@@ -10,7 +10,7 @@ const ManagePanel = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (email.toLowerCase() === "okanbhdr@gmail.com" && password === "332461") {
+    if (email.toLowerCase() === "admin@admin" && password === "admin") {
       login({ email, password });
       navigate("/userpanel");
     } else {
