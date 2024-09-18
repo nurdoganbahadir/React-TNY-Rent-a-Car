@@ -28,7 +28,7 @@ const Navbar = () => {
               class="h-8"
               alt="Flowbite Logo"
             />
-            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+            <span class="self-center text-sm font-semibold whitespace-nowrap dark:text-white sm:text-xl">
               TNY Rent a Car
             </span>
           </a>
@@ -36,7 +36,7 @@ const Navbar = () => {
             <button
               onClick={toggleDarkMode}
               type="button"
-              className="text-white mx-4 bg-gray-700 hover:bg-gray-800  font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-yellow-300 dark:hover:bg-yellow-400 dark:focus:ring-gray-800"
+              className="text-white mr-0 md:mx-4 bg-gray-700 hover:bg-gray-800  font-medium rounded-lg text-sm md:px-4 md:py-2 p-2 text-center dark:bg-yellow-300 dark:hover:bg-yellow-400 dark:focus:ring-gray-800"
             >
               {darkMode ? (
                 <SunIcon className="fill-current h-4 w-4" />
@@ -47,7 +47,7 @@ const Navbar = () => {
             <button
               onClick={() => navigate("/managepanel")}
               type="button"
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 mr-4 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xs md:text-sm md:px-4 md:py-2 mr-4 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 p-1"
             >
               Yönetici Giriş
             </button>
