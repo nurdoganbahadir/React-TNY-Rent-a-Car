@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/AuthProvider";
 import { useNavigate } from "react-router-dom";
 
@@ -8,9 +8,21 @@ const ManagePanel = () => {
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const storageEmail = localStorage.getItem("email");
+    const storagePassword = localStorage.getItem("password");
+
+    if (storageEmail === "admin@admin" && storagePassword === "admin") {
+      login({ email: storageEmail, password: storagePassword });
+      navigate("/userpanel");
+    }
+  }, [login, navigate]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (email.toLowerCase() === "admin@admin" && password === "admin") {
+      localStorage.setItem("email", email);
+      localStorage.setItem("password", password);
       login({ email, password });
       navigate("/userpanel");
     } else {

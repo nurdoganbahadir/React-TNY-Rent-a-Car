@@ -16,7 +16,7 @@ const AppRouter = () => {
         <Route path="/" element={<Home />} />
         <Route path="/managepanel" element={<ManagePanel />} />
         <Route path="*" element={<Error />} />
-        <Route path="" element={<PrivateRouter />}>
+        <Route element={<PrivateRouter />}>
           <Route path="/userpanel" element={<UserPanel />} />
           <Route path="/userpanel/additem" element={<AddItem />} />
           <Route path="/userpanel/putitem" element={<EditItem />} />

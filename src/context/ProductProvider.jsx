@@ -5,6 +5,7 @@ import { createContext } from "react";
 import axios from "axios";
 import { useEffect } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
+import { AuthContext } from "./AuthProvider";
 
 const ProductContext = createContext();
 
@@ -14,8 +15,15 @@ export const useProductsContext = () => {
 
 const ProductProvider = ({ children }) => {
   const navigate = useNavigate();
+  const { user } = useContext(AuthContext);
   const [data, setData] = useState([]);
   const [edit, setEdit] = useState("");
+
+  useEffect(() => {
+    if (!user) {
+      navigate("/managepanel");
+    }
+  }, [user, navigate]);
 
   //!datayı burada çekiyoruz
   const getData = async () => {
