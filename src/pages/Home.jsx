@@ -38,13 +38,20 @@ const Home = () => {
                   </span>
                 </div>
               </div>
-              <div className="pt-3 ml-4 mr-2 mb-3">
-                <h3 className="text-xl text-gray-900 uppercase dark:text-white">
-                  {items.brand}
-                </h3>
-                <p className="text-gray-400 text-sm mt-1 capitalize">
-                  {items.model}
-                </p>
+              <div className="flex justify-between">
+                <div className="pt-3 ml-4 mr-2 mb-3">
+                  <h3 className="text-xl text-gray-900 uppercase dark:text-white">
+                    {items.brand}
+                  </h3>
+                  <p className="text-gray-400 text-sm mt-1 capitalize">
+                    {items.model}
+                  </p>
+                </div>
+                <div className="tex-center flex items-end pt-3 ml-4 mr-2 mb-3">
+                  <button className="bg-primary-color px-4 py-2 rounded-full text-white text-sm hover:bg-secondary-color">
+                    Detaylı Bilgi
+                  </button>
+                </div>
               </div>
             </a>
           </article>
