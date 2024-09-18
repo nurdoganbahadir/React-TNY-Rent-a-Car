@@ -6,6 +6,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
+import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
 
 const ProductContext = createContext();
 
@@ -45,8 +46,10 @@ const ProductProvider = ({ children }) => {
         postinfo
       );
       getData();
+      toastSuccessNotify("Yeni araç başarıyla eklendi.");
     } catch (error) {
       console.log(error);
+      toastErrorNotify("Başarısız oldu.");
     }
   };
 
@@ -54,6 +57,7 @@ const ProductProvider = ({ children }) => {
   const deleteData = async (id) => {
     await axios.delete(`https://66e42f40d2405277ed136991.mockapi.io/tny/${id}`);
     getData();
+    toastSuccessNotify("Silme işlemi başarıyla gerçekleşti.");
   };
 
   //!put-edit işlemi
@@ -63,6 +67,7 @@ const ProductProvider = ({ children }) => {
       edit
     );
     getData();
+    toastSuccessNotify("Araç bilgileri başarıyla güncellendi");
   };
 
   useEffect(() => {
