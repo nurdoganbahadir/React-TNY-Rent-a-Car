@@ -1,3 +1,4 @@
+import MySwiper from "../components/Other/MySwiper";
 import { useProductsContext } from "../context/ProductProvider";
 
 const Home = () => {
@@ -5,6 +6,7 @@ const Home = () => {
 
   return (
     <section className="mt-12 mx-auto px-4 max-w-screen-xl md:px-8">
+      <MySwiper />
       <div className="text-center">
         <h1 className="text-3xl text-gray-800 font-semibold dark:text-white">
           Hoşgeldiniz, araçlarımıza bir göz atmaya ne dersiniz?
