@@ -1,9 +1,17 @@
+import { useState } from "react";
+import Modal from "../components/Other/Modal";
 import MySwiper from "../components/Other/MySwiper";
 import { useProductsContext } from "../context/ProductProvider";
 
 const Home = () => {
+  const [modal, setModal] = useState(null);
   const { data } = useProductsContext();
 
+  const handleShow = (id) => {
+    const item = data.find((items) => items.id === id);
+    setModal(item);
+  };
+  
   return (
     <section className="mt-12 mx-auto px-4 max-w-screen-xl md:px-8">
       <MySwiper />
@@ -50,7 +58,10 @@ const Home = () => {
                   </p>
                 </div>
                 <div className="tex-center flex items-end pt-3 ml-4 mr-2 mb-3">
-                  <button className="bg-primary-color px-4 py-2 rounded-full text-white text-sm hover:bg-secondary-color">
+                  <button
+                    onClick={() => handleShow(items.id)}
+                    className="bg-primary-color px-4 py-2 rounded-full text-white text-sm hover:bg-secondary-color"
+                  >
                     Detaylı Bilgi
                   </button>
                 </div>
@@ -59,6 +70,7 @@ const Home = () => {
           </article>
         ))}
       </div>
+      {modal && <Modal modal={modal} onClose={() => setModal(null)} />}
     </section>
   );
 };
