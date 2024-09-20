@@ -7,6 +7,7 @@ import UserPanel from "../pages/UserPanel";
 import PrivateRouter from "./PrivateRouter";
 import AddItem from "../components/Other/AddItem";
 import EditItem from "../components/Other/EditItem";
+import Footer from "../components/Footer/Footer";
 
 const AppRouter = () => {
   return (
@@ -22,6 +23,7 @@ const AppRouter = () => {
           <Route path="/userpanel/putitem" element={<EditItem />} />
         </Route>
       </Routes>
+      <Footer />
     </>
   );
 };
