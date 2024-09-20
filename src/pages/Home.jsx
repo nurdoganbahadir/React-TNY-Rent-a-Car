@@ -2,6 +2,7 @@ import { useState } from "react";
 import Modal from "../components/Other/Modal";
 import MySwiper from "../components/Other/MySwiper";
 import { useProductsContext } from "../context/ProductProvider";
+import Stats from "./Stats";
 
 const Home = () => {
   const [modal, setModal] = useState(null);
@@ -11,7 +12,7 @@ const Home = () => {
     const item = data.find((items) => items.id === id);
     setModal(item);
   };
-  
+
   return (
     <section className="mt-12 mx-auto px-4 max-w-screen-xl md:px-8">
       <MySwiper />
@@ -71,6 +72,7 @@ const Home = () => {
         ))}
       </div>
       {modal && <Modal modal={modal} onClose={() => setModal(null)} />}
+      <Stats />
     </section>
   );
 };
