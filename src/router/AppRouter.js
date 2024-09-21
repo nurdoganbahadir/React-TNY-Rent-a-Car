@@ -8,11 +8,13 @@ import PrivateRouter from "./PrivateRouter";
 import AddItem from "../components/Other/AddItem";
 import EditItem from "../components/Other/EditItem";
 import Footer from "../components/Footer/Footer";
+import { useRef } from "react";
 
 const AppRouter = () => {
+  const footerRef = useRef(null);
   return (
     <>
-      <Navbar />
+      <Navbar footerRef={footerRef} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/managepanel" element={<ManagePanel />} />
@@ -23,7 +25,7 @@ const AppRouter = () => {
           <Route path="/userpanel/putitem" element={<EditItem />} />
         </Route>
       </Routes>
-      <Footer />
+      <Footer ref={footerRef} />
     </>
   );
 };

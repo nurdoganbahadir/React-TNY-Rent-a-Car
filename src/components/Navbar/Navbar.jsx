@@ -1,17 +1,27 @@
 import React, { useState } from "react";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
 import { NavLink, useNavigate } from "react-router-dom";
+import Footer from "../Footer/Footer";
+import { useRef } from "react";
 
-const Navbar = () => {
+const Navbar = ({ footerRef }) => {
   const navigate = useNavigate();
   const [darkMode, setDarkMode] = useState(false);
-
+  
   const toggleDarkMode = () => {
     setDarkMode(!darkMode); // Dark mode durumunu tersine çeviriyoruz
     if (!darkMode) {
       document.documentElement.classList.add("dark"); // Dark mode açılır
     } else {
       document.documentElement.classList.remove("dark"); // Dark mode kapanır
+    }
+  };
+
+  const scrollToFooter = () => {
+    if (footerRef.current) {
+      footerRef.current.scrollIntoView({ behavior: "smooth" });
+    } else {
+      console.error("Footer referansı bulunamadı!");
     }
   };
 
@@ -109,7 +119,8 @@ const Navbar = () => {
               </li>
               <li>
                 <NavLink
-                  to={"/contact"}
+                  to="#footer"
+                  onClick={scrollToFooter}
                   className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 >
                   Contact

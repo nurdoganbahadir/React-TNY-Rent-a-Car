@@ -7,6 +7,7 @@ import Stats from "./Stats";
 const Home = () => {
   const [modal, setModal] = useState(null);
   const { data } = useProductsContext();
+  
 
   const handleShow = (id) => {
     const item = data.find((items) => items.id === id);
@@ -73,6 +74,7 @@ const Home = () => {
       </div>
       {modal && <Modal modal={modal} onClose={() => setModal(null)} />}
       <Stats />
+      
     </section>
   );
 };
