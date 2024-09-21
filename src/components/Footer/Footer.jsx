@@ -36,6 +36,7 @@ const Footer = () => {
               <FaGoogle className="text-4xl" />
             </a>
           </div>
+          <p className="text-center mt-5">© 2024 TNY Rent a Car. All rights reserved.</p>
         </div>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d755.4325470074089!2d30.004041997601494!3d40.767958704901474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cb4ff2bcbec6f5%3A0x84833275ccf07d94!2sTNY%20Oto%20Kiralama!5e0!3m2!1str!2str!4v1726825933171!5m2!1str!2str"
