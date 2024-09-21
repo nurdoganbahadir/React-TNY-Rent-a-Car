@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer className="md:my-12 mx-auto px-4 max-w-screen-xl md:px-8 bg-gray-200 md:rounded-xl">
       <div className=" flex flex-col md:flex-row justify-between">
-        <div className="dark:text-white w-[100%] md:w-[50%] my-12">
+        <div className=" w-[100%] md:w-[50%] my-12">
           <p className="text-center text-xl mb-4 font-bold">
             Bize Ulaşmak İçin
           </p>
@@ -22,11 +22,19 @@ const Footer = () => {
             <b>Adress:</b> Alikahya Atatürk, Sanayi Cd. No: 23 No:6, 41310,
             Kocaeli/İzmit
           </p>
-          <div className="">
-            <FaInstagram />
-            <CiLinkedin />
-            <FaGithub />
-            <FaGoogle />
+          <div className="flex justify-center gap-6 ">
+            <a href="https://www.instagram.com/tnyotokiralama">
+              <FaInstagram className="text-4xl" />
+            </a>
+            <a href="https://www.linkedin.com/in/nurdoganbahadir/">
+              <CiLinkedin className="text-4xl" />
+            </a>
+            <a href="https://github.com/nurdoganbahadir">
+              <FaGithub className="text-4xl" />
+            </a>
+            <a href="https://www.rentacarss.com/kocaeli-izmit-tny-oto-kiralama">
+              <FaGoogle className="text-4xl" />
+            </a>
           </div>
         </div>
         <iframe
