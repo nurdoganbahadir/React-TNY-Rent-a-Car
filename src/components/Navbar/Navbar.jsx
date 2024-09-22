@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
 import { NavLink, useNavigate } from "react-router-dom";
 import Footer from "../Footer/Footer";
@@ -6,16 +6,25 @@ import { useRef } from "react";
 
 const Navbar = ({ footerRef }) => {
   const navigate = useNavigate();
-  const [darkMode, setDarkMode] = useState(false);
-  
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedDarkMode = localStorage.getItem("darkMode");
+    return savedDarkMode === "true"; // Eğer kayıtlıysa true/false olarak döner
+  });
+
   const toggleDarkMode = () => {
     setDarkMode(!darkMode); // Dark mode durumunu tersine çeviriyoruz
-    if (!darkMode) {
-      document.documentElement.classList.add("dark"); // Dark mode açılır
-    } else {
-      document.documentElement.classList.remove("dark"); // Dark mode kapanır
-    }
   };
+
+  useEffect(() => {
+    // Dark mode açıldığında veya kapandığında class ekleyip kaldır
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    // Dark mode durumunu localStorage'da sakla
+    localStorage.setItem("darkMode", darkMode);
+  }, [darkMode]);
 
   const scrollToFooter = () => {
     if (footerRef.current) {
@@ -109,7 +118,7 @@ const Navbar = ({ footerRef }) => {
                   About
                 </NavLink>
               </li>
-              
+
               <li>
                 <NavLink
                   to="#footer"
