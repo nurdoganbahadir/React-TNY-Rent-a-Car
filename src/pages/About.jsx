@@ -56,10 +56,10 @@ const About = () => {
     <section className="py-14">
       <div className="max-w-screen-xl mx-auto px-4 text-center md:px-8">
         <div className="max-w-xl mx-auto">
-          <h3 className="text-gray-800 text-3xl font-semibold sm:text-4xl">
+          <h3 className="text-gray-800 text-3xl font-semibold sm:text-4xl dark:text-white">
             Meet our team
           </h3>
-          <p className="text-gray-600 mt-3">
+          <p className="text-gray-600 mt-3 dark:text-gray-200">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry.Lorem Ipsum has been the industry's standard dummy.
           </p>
@@ -76,11 +76,11 @@ const About = () => {
                   />
                 </div>
                 <div className="mt-2">
-                  <h4 className="text-gray-700 font-semibold sm:text-lg">
+                  <h4 className="text-gray-700 font-semibold sm:text-lg dark:text-white">
                     {item.name}
                   </h4>
-                  <p className="text-indigo-600">{item.title}</p>
-                  <p className="text-gray-600 mt-2">{item.desc}</p>
+                  <p className="text-indigo-600 dark:text-indigo-300">{item.title}</p>
+                  <p className="text-gray-600 mt-2 dark:text-gray-200">{item.desc}</p>
                   <div className="mt-4 flex justify-center gap-4 text-gray-400">
                     <a href={item.twitter}>
                       <svg
