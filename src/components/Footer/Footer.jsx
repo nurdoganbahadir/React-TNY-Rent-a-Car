@@ -26,20 +26,32 @@ const Footer = forwardRef((props, ref) => {
             Kocaeli/İzmit
           </p>
           <div className="flex justify-center gap-6">
-            <a href="https://www.instagram.com/tnyotokiralama">
+            <a
+              href="https://www.instagram.com/tnyotokiralama"
+              className="hover:text-primary-color"
+            >
               <FaInstagram className="text-4xl" />
             </a>
-            <a href="https://www.linkedin.com/in/nurdoganbahadir/">
+            <a
+              href="https://www.linkedin.com/in/nurdoganbahadir/"
+              className="hover:text-primary-color"
+            >
               <CiLinkedin className="text-4xl" />
             </a>
-            <a href="https://github.com/nurdoganbahadir">
+            <a
+              href="https://github.com/nurdoganbahadir"
+              className="hover:text-primary-color"
+            >
               <FaGithub className="text-4xl" />
             </a>
-            <a href="https://www.rentacarss.com/kocaeli-izmit-tny-oto-kiralama">
+            <a
+              href="https://www.rentacarss.com/kocaeli-izmit-tny-oto-kiralama"
+              className="hover:text-primary-color"
+            >
               <FaGoogle className="text-4xl" />
             </a>
           </div>
-          <p className="text-center mt-5">
+          <p className="text-center mt-5 md:mt-24">
             © 2024 TNY Rent a Car. All rights reserved.
           </p>
         </div>
