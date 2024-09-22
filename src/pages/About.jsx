@@ -3,61 +3,29 @@ import React from "react";
 const About = () => {
   const team = [
     {
-      avatar:
-        "https://images.unsplash.com/photo-1511485977113-f34c92461ad9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ",
+      avatar: "https://cdn.jsdelivr.net/gh/alohe/avatars/png/3d_1.png",
       name: "Okan Bahadır",
-      title: "Product designer",
+      title: "Kurucu",
       desc: "Lorem Ipsum is simply dummy text of the printing and typesettin industry.",
       linkedin: "javascript:void(0)",
       twitter: "javascript:void(0)",
     },
     {
-      avatar: "https://api.uifaces.co/our-content/donated/xZ4wg2Xj.jpg",
+      avatar: "https://cdn.jsdelivr.net/gh/alohe/avatars/png/3d_4.png",
       name: "Nurdoğan Bahadır",
-      title: "Software engineer",
+      title: "Müdür",
       desc: "Lorem Ipsum is simply dummy text of the printing and typesettin industry.",
-      linkedin: "javascript:void(0)",
+      linkedin: "https://www.linkedin.com/in/nurdoganbahadir/",
       twitter: "javascript:void(0)",
     },
-    {
-      avatar: "https://randomuser.me/api/portraits/women/79.jpg",
-      name: "Brown Luis",
-      title: "Full stack engineer",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesettin industry.",
-      linkedin: "javascript:void(0)",
-      twitter: "javascript:void(0)",
-    },
-    {
-      avatar: "https://randomuser.me/api/portraits/women/63.jpg",
-      name: "Lysa sandiago",
-      title: "Head of designers",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesettin industry.",
-      linkedin: "javascript:void(0)",
-      twitter: "javascript:void(0)",
-    },
-    {
-      avatar: "https://randomuser.me/api/portraits/men/86.jpg",
-      name: "Daniel martin",
-      title: "Product designer",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesettin industry.",
-      linkedin: "javascript:void(0)",
-      twitter: "javascript:void(0)",
-    },
-    {
-      avatar: "https://randomuser.me/api/portraits/men/46.jpg",
-      name: "Vicky tanson",
-      title: "Product manager",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesettin industry.",
-      linkedin: "javascript:void(0)",
-      twitter: "javascript:void(0)",
-    },
+    
   ];
   return (
     <section className="py-14">
       <div className="max-w-screen-xl mx-auto px-4 text-center md:px-8">
         <div className="max-w-xl mx-auto">
           <h3 className="text-gray-800 text-3xl font-semibold sm:text-4xl dark:text-white">
-            Meet our team
+            Takımımızla Tanışın
           </h3>
           <p className="text-gray-600 mt-3 dark:text-gray-200">
             Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -65,7 +33,7 @@ const About = () => {
           </p>
         </div>
         <div className="mt-12">
-          <ul className="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
+          <ul className="grid gap-8 sm:grid-cols-1 md:grid-cols-2">
             {team.map((item, idx) => (
               <li key={idx}>
                 <div className="w-24 h-24 mx-auto">
