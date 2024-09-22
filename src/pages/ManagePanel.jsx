@@ -45,7 +45,7 @@ const ManagePanel = () => {
       >
         <div className="flex flex-col gap-1">
           <label htmlFor="email" className="font-serif text-xl dark:text-white">
-            Email
+            Email - admin@admin
           </label>
           <input
             type="email"
@@ -60,7 +60,7 @@ const ManagePanel = () => {
             htmlFor="password"
             className="font-serif text-xl dark:text-white"
           >
-            Password
+            Password - admin
           </label>
 
           <input

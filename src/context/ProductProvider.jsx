@@ -21,7 +21,7 @@ const ProductProvider = ({ children }) => {
   const [edit, setEdit] = useState("");
 
   useEffect(() => {
-    if (!user) {
+    if (!user && window.location.pathname.includes("/userpanel")) {
       navigate("/managepanel");
     }
   }, [user, navigate]);
