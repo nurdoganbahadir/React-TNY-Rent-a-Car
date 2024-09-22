@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
 import { NavLink, useNavigate } from "react-router-dom";
-import Footer from "../Footer/Footer";
-import { useRef } from "react";
+
 
 const Navbar = ({ footerRef }) => {
   const navigate = useNavigate();
