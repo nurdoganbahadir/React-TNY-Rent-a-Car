@@ -12,7 +12,7 @@ const EditItem = () => {
   };
 
   const { putData, setEdit, edit } = useProductsContext();
-  console.log(edit);
+
   return (
     <>
       <form onSubmit={handleSubmit} className=" md:w-[50%] mx-auto my-5 p-4">

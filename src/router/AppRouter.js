@@ -16,20 +16,46 @@ const AppRouter = () => {
   return (
     <>
       <Navbar footerRef={footerRef} />
+      {/* Navbar ve Footer sadece PrivateRouter dışında gösterilecek */}
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/managepanel" element={<ManagePanel />} />
-        <Route path="/about" element={<About />} />
+        {/* Navbar ve Footer gösterilecek rotalar */}
+        <Route
+          path="/"
+          element={
+            <>
+              <Home />
+              <Footer ref={footerRef} />
+            </>
+          }
+        />
+        <Route
+          path="/managepanel"
+          element={
+            <>
+              <ManagePanel />
+              <Footer ref={footerRef} />
+            </>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <>
+              <About />
+              <Footer ref={footerRef} />
+            </>
+          }
+        />
+        {/* Hatalı rotalarda Navbar ve Footer gösterilmesin */}
         <Route path="*" element={<Error />} />
+
+        {/* PrivateRouter içine Navbar ve Footer eklenmedi */}
         <Route element={<PrivateRouter />}>
-          <Route path="/userpanel" element={<UserPanel />}>
-            <Route path="additem" element={<AddItem />} />
-            <Route path="putitem" element={<EditItem />} />
-          </Route>
-          
+          <Route path="/userpanel" element={<UserPanel />} />
+          <Route path="/userpanel/additem" element={<AddItem />} />
+          <Route path="/userpanel/putitem" element={<EditItem />} />
         </Route>
       </Routes>
-      <Footer ref={footerRef} />
     </>
   );
 };

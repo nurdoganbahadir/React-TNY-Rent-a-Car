@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { useProductsContext } from "../context/ProductProvider";
 import Loading from "../components/Other/Loading";
 
@@ -8,13 +8,13 @@ const UserPanel = () => {
 
   const handleDelete = (id) => {
     deleteData(id);
-    console.log(id);
   };
   const { loading } = useProductsContext();
 
   const { data, deleteData, setEdit } = useProductsContext();
   return (
     <div className="max-w-2xl mx-auto my-5 px-4">
+      
       <div className="items-start justify-between sm:flex">
         <div>
           <h4 className="text-gray-800 text-xl font-semibold dark:text-white">
