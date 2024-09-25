@@ -22,9 +22,11 @@ const AppRouter = () => {
         <Route path="/about" element={<About />} />
         <Route path="*" element={<Error />} />
         <Route element={<PrivateRouter />}>
-          <Route path="/userpanel" element={<UserPanel />} />
-          <Route path="/userpanel/additem" element={<AddItem />} />
-          <Route path="/userpanel/putitem" element={<EditItem />} />
+          <Route path="/userpanel" element={<UserPanel />}>
+            <Route path="additem" element={<AddItem />} />
+            <Route path="putitem" element={<EditItem />} />
+          </Route>
+          
         </Route>
       </Routes>
       <Footer ref={footerRef} />
