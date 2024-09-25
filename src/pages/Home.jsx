@@ -27,7 +27,7 @@ const Home = () => {
         </p>
       </div>
       <div className="my-12 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-        {data.map((items) => (
+        {data?.map((items) => (
           <article
             className="max-w-md w-[350px] mx-auto mt-4 shadow-lg border rounded-md duration-300 hover:shadow-sm"
             key={items.id}

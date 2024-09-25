@@ -45,7 +45,7 @@ const UserPanel = () => {
         </a>
       </div>
       <ul className="mt-12 divide-y">
-        {data.map(
+        {data?.map(
           ({ id, brand, model, year, gear, img, insurance, info, price }) => (
             <li key={id} className="py-5 flex items-start justify-between">
               <div className="flex gap-3">
