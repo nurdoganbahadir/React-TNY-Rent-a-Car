@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { createContext } from "react";
 import axios from "axios";
 import { useEffect } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
 import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
 
@@ -19,6 +19,7 @@ const ProductProvider = ({ children }) => {
   const { user } = useContext(AuthContext);
   const [data, setData] = useState([]);
   const [edit, setEdit] = useState("");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (!user && window.location.pathname.includes("/userpanel")) {
@@ -28,6 +29,7 @@ const ProductProvider = ({ children }) => {
 
   //!datayı burada çekiyoruz
   const getData = async () => {
+    setLoading(true);
     try {
       const { data } = await axios.get(
         "https://66e42f40d2405277ed136991.mockapi.io/tny"
@@ -35,11 +37,14 @@ const ProductProvider = ({ children }) => {
       setData(data);
     } catch (error) {
       toastErrorNotify("Başarısız oldu.");
+    } finally {
+      setLoading(false);
     }
   };
 
   //! post işlemi
   const postData = async (postinfo) => {
+    setLoading(true);
     try {
       await axios.post(
         "https://66e42f40d2405277ed136991.mockapi.io/tny",
@@ -49,6 +54,8 @@ const ProductProvider = ({ children }) => {
       toastSuccessNotify("Yeni araç başarıyla eklendi.");
     } catch (error) {
       toastErrorNotify("Başarısız oldu.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -81,6 +88,7 @@ const ProductProvider = ({ children }) => {
     putData,
     setEdit,
     edit,
+    loading
   };
 
   return (
