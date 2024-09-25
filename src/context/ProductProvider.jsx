@@ -34,7 +34,7 @@ const ProductProvider = ({ children }) => {
       );
       setData(data);
     } catch (error) {
-      console.log(error);
+      toastErrorNotify("Başarısız oldu.");
     }
   };
 
@@ -48,7 +48,6 @@ const ProductProvider = ({ children }) => {
       getData();
       toastSuccessNotify("Yeni araç başarıyla eklendi.");
     } catch (error) {
-      console.log(error);
       toastErrorNotify("Başarısız oldu.");
     }
   };
@@ -73,7 +72,6 @@ const ProductProvider = ({ children }) => {
   useEffect(() => {
     getData();
   }, []);
-  console.log(data);
 
   const values = {
     data,
