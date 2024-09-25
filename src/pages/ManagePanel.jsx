@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import { toastErrorNotify } from "../helper/ToastNotify";
 
 const ManagePanel = () => {
   const [email, setEmail] = useState("");
@@ -26,7 +27,7 @@ const ManagePanel = () => {
       login({ email, password });
       navigate("/userpanel");
     } else {
-      alert("Kullanıcı bilgilerini yanlış girdiniz lütfen tekrar deneyiniz.");
+      toastErrorNotify("Kullanıcı bilgilerini kontrol edip tekrar deneyiniz.");
     }
   };
 
